@@ -3,7 +3,7 @@ import { checkTokenValidity } from '/scripts/global.js';
 import { removeToken } from '/scripts/global.js';
 import { adminMenu } from '/scripts/global.js';
  
-const API_URL = 'https://localhost:7160/api/Users/';
+const API_URL = 'https://ticketing-system.runasp.net/api/Users/';
 let id = 0;
 
 document.addEventListener('DOMContentLoaded', async() => {
@@ -115,7 +115,7 @@ const apiRequest = async (url, method, data) => {
 const populateSelectOptions = async (selectId, entity) => {
     try{
         const selectElement = document.getElementById(selectId);
-        const data = await apiRequest(`https://localhost:7160/api/${entity}`, 'GET', null);
+        const data = await apiRequest(`https://ticketing-system.runasp.net/api/${entity}`, 'GET', null);
         if (!data || data.length === 0) {
             selectElement.innerHTML = '<option value="">No options available</option>';
             return;
@@ -188,7 +188,7 @@ const updatePassword = async () => {
         const confirmpassword = document.getElementById('user_confirm_password').value;
 
         
-        const isPasswordValid = await apiRequest(`https://localhost:7160/api/Authentication/verifyPassword/${localStorage.getItem("userID")}/${currentpassword}`, 'GET', null);
+        const isPasswordValid = await apiRequest(`https://ticketing-system.runasp.net/api/Authentication/verifyPassword/${localStorage.getItem("userID")}/${currentpassword}`, 'GET', null);
 
         if(isPasswordValid.isPasswordValid === false){
             Swal.fire({
@@ -214,7 +214,7 @@ const updatePassword = async () => {
             password: password
         }
 
-        const res = await apiRequest(`https://localhost:7160/api/Authentication/updatePassword/${id}`, 'PATCH', passData);
+        const res = await apiRequest(`https://ticketing-system.runasp.net/api/Authentication/updatePassword/${id}`, 'PATCH', passData);
 
         if (res)
             Toastify({

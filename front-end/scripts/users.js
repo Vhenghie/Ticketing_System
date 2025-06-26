@@ -2,7 +2,7 @@ import { checkTokenValidity } from '/scripts/global.js';
 import { removeToken } from '/scripts/global.js';
 import { adminMenu } from '/scripts/global.js';
  
-const API_URL = 'https://localhost:7160/api/Users';
+const API_URL = 'https://ticketing-system.runasp.net/api/Users';
 let rawData = [];
 
 document.addEventListener('DOMContentLoaded', async() => {

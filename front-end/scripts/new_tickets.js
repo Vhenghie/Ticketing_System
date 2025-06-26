@@ -3,7 +3,7 @@ import { checkTokenValidity } from '/scripts/global.js';
 import { removeToken } from '/scripts/global.js';
 import { adminMenu } from '/scripts/global.js';
  
-const API_URL = 'https://localhost:7160/api/Ticket';
+const API_URL = 'https://ticketing-system.runasp.net/api/Ticket';
 const USER_ID = localStorage.getItem('userID');
 
 document.addEventListener('DOMContentLoaded', async() => {
@@ -82,7 +82,7 @@ const apiRequest = async (url, method, data) => {
 const populateSelectOptions = async (selectId, entity) => {
     try {
         const selectElement = document.getElementById(selectId);
-        const data = await apiRequest(`https://localhost:7160/api/${entity}`, 'GET', null);
+        const data = await apiRequest(`https://ticketing-system.runasp.net/api/${entity}`, 'GET', null);
         
         if (!data || !Array.isArray(data)) {
             throw new Error(`Invalid data for ${entity}`);

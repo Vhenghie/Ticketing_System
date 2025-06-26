@@ -3,7 +3,7 @@ import { checkTokenValidity } from '/scripts/global.js';
 import { removeToken } from '/scripts/global.js';
 import { adminMenu } from '/scripts/global.js';
  
-const API_URL = 'https://localhost:7160/api/';
+const API_URL = 'https://ticketing-system.runasp.net/api/';
 const MODAL = document.querySelector('.modal');
 const MODAL_ID = document.getElementById('modalIDInput');
 const MODAL_NAME = document.getElementById('modalNameInput');

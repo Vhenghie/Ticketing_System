@@ -1,4 +1,4 @@
-const baseURL = 'https://localhost:7160/api/';
+const baseURL = 'https://ticketing-system.runasp.net/api/';
 
 document.addEventListener('DOMContentLoaded', function(e){
     e.preventDefault();

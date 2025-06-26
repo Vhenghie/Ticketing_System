@@ -3,7 +3,7 @@ import { checkTokenValidity } from '/scripts/global.js';
 import { removeToken } from '/scripts/global.js';
 import { adminMenu } from '/scripts/global.js';
  
-const API_URL = 'https://localhost:7160/api/Ticket/';
+const API_URL = 'https://ticketing-system.runasp.net/api/Ticket/';
 let ticketID = '';
 
 document.addEventListener('DOMContentLoaded', async() => {
@@ -126,7 +126,7 @@ const apiRequest = async (url, method, data) => {
 const populateSelectOptions = async (selectId, entity) => {
     try{
         const selectElement = document.getElementById(selectId);
-        const data = await apiRequest(`https://localhost:7160/api/${entity}`, 'GET', null);
+        const data = await apiRequest(`https://ticketing-system.runasp.net/api/${entity}`, 'GET', null);
         if (!data || data.length === 0) {
             selectElement.innerHTML = '<option value="">No options available</option>';
             return;
@@ -222,7 +222,7 @@ const deleteTicket = async (event) => {
 }
 
 const populateComments = async () => {
-    const data = await apiRequest(`https://localhost:7160/api/Comment/${ticketID}`, 'GET', null);
+    const data = await apiRequest(`https://ticketing-system.runasp.net/api/Comment/${ticketID}`, 'GET', null);
 
     const comments_wrapper = document.querySelector('.comments_cards_wrapper');
     comments_wrapper.innerHTML = ''; 
@@ -269,7 +269,7 @@ const submitComment = async() => {
 
     try
     {
-        await apiRequest('https://localhost:7160/api/Comment', 'POST', commentObj);
+        await apiRequest('https://ticketing-system.runasp.net/api/Comment', 'POST', commentObj);
         commentInput.value = '';
         Toastify({
                 text: "Comment added successfully",
