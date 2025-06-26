@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/global.css"/>
+    <link rel="stylesheet" href="styles/new_tickets.css"/>
+    <title>New Tickets</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main_wrapper">
+            <nav>
+                <div class="brand_menu">
+                    <div class="logo">
+
+                    </div>
+                    <label>TICKETLAND</label>
+                </div>
+                <span class="nav_divider"></span>
+                <div class="menus">
+                    <div class="main_menu menu_container">
+                        <label>Menu</label>
+                        <div class="links">
+                            <a href="new_tickets.html">New Tickets</a>
+                            <a href="my_tickets.html">My Tickets</a>
+                        </div>
+                    </div>
+                    <div class="admin_menu menu_container">
+                        <label>Admin</label>
+                        <div class="links">
+                            <a href="all_tickets.html">All Tickets</a>
+                            <a href="users.html">Users</a>
+                            <a href="maintenance.html">Maintenance</a>
+                        </div>
+                    </div>
+                </div>
+                <span class="nav_divider"></span>
+                <div class="bottom_menu">
+                    <a class="logoutLink">Logout</a>
+                </div>
+            </nav>
+            <main>
+                <div class="header">
+                    <button id="toggleButton" class="toggleButton">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+                <div class="content">
+                    <div class="content_header">
+                        <label id="content_title" class="content_title">
+                            New Ticket
+                        </label>
+                    </div>
+                    <div class="contents">
+                        <div class="add_ticket_form">
+                            <form id="ticket_form" class="ticket_form">   
+                                <section>
+                                    <label for="">Subject</label>
+                                    <input type="text" id="ticket_subject">
+                                </section>
+                                <section>
+                                    <label for="">Assignee</label>
+                                    <select id="ticket_assignee">
+                                    </select>
+                                </section>
+                                <section>
+                                    <label for="">Priority</label>
+                                    <select id="ticket_priority">
+                                    </select>
+                                </section>
+                                <section>
+                                    <label for="">Status</label>
+                                    <select id="ticket_status" readonly disabled>
+                                    </select>
+                                </section>
+                                <section class="textarea_section">
+                                    <label for="">Description</label>
+                                    <textarea name="ticketDescription" id="ticketDescription"></textarea>
+                                </section>
+                                <section class="add_button_section">
+                                    <button id="btnAddTicket" class="btnAddTicket">SUBMIT</button>
+                                </section>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script type="module" src="scripts/global.js"></script>
+    <script type="module" src="scripts/new_tickets.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

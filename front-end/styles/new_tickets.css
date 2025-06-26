@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.wrapper .main_wrapper main .content .contents .add_ticket_form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.wrapper .main_wrapper main .content .contents .add_ticket_form .ticket_form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper .main_wrapper main .content .contents .add_ticket_form .ticket_form section{
+    display: flex;
+    align-items: end;
+    width: 80%;
+    height: 2.5rem;
+    margin: 0.7rem 0;
+
+}
+
+.wrapper .main_wrapper main .content .contents .add_ticket_form .ticket_form section label{
+    font-size: 1rem;
+    width: 220px;
+}
+
+.wrapper .main_wrapper main .content .contents .add_ticket_form .ticket_form section input,
+.wrapper .main_wrapper main .content .contents .add_ticket_form .ticket_form section select,
+.wrapper .main_wrapper main .content .contents .add_ticket_form .ticket_form section textarea{
+    background-color: rgba(230, 230, 230, 0.627);
+    border: none;
+    border-bottom: 3px #0575e6 solid;
+    font-size: 1rem;    
+    flex: 1;
+    font-family: Poppins, sans-serif; 
+    padding: 0.3rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.wrapper .main_wrapper main .content .contents .add_ticket_form .ticket_form .textarea_section{
+    flex: 1;
+}
+
+.wrapper .main_wrapper main .content .contents .add_ticket_form .ticket_form section textarea{
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper .main_wrapper main .content .contents .add_ticket_form .ticket_form .add_button_section{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.wrapper .main_wrapper main .content .contents .add_ticket_form .ticket_form .add_button_section button{
+    padding: 0.3rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #0575e6;
+    border: none;
+    border-radius: 0.7rem;
+    color: #f7f8ff;
+    font-family: Poppins, sans-serif; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wrapper .main_wrapper main .content .contents .add_ticket_form .ticket_form .add_button_section button:hover{
+    background-color: #095096;
+}
+
+
+

@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #ffffff;
+}
+
+.wrapper .main_wrapper{
+    display: flex;
+    width: 90%;
+    height: 95%;
+}
+
+/* ------ NAVIGATION ------ */
+.wrapper .main_wrapper nav{
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    height: 100%;
+    background-color: #0575e6;
+    padding: 1.5rem;
+}
+
+/* brand_menu */
+.wrapper .main_wrapper nav .brand_menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    margin-bottom: 1.3rem;
+}
+
+.wrapper .main_wrapper nav .brand_menu .logo{
+    display: flex;
+    height: 80%;
+    width: 60px;
+    border: none;
+    border-radius: 1rem;
+    background-color: #f7f8ff;
+    margin-right: 1rem;
+}
+
+.wrapper .main_wrapper nav .brand_menu label{
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #f7f8ff;
+}
+
+/* menus */
+.wrapper .main_wrapper nav .menus{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    margin-bottom: 1.3rem;
+    padding: 1rem 0;
+}
+
+.wrapper .main_wrapper nav .menus .menu_container{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
+
+.wrapper .main_wrapper nav .menus .main_menu{
+    margin-bottom: 1rem;
+}
+
+.wrapper .main_wrapper nav .menus .menu_container label{
+    color: #f7f8ff;
+    font-weight: 300;
+    font-size: 0.7rem;
+}
+
+.wrapper .main_wrapper nav .menus .menu_container .links{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0.2rem;
+}
+
+.wrapper .main_wrapper nav .menus .menu_container .links a{
+    text-decoration: none;
+    color: #f7f8ff;
+    font-weight: 600;
+    padding: 0.5rem 0.6rem;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.wrapper .main_wrapper nav .menus .menu_container .links a:hover{
+    background-color: #ffffff54;
+}
+
+/* bottom_menu */
+.wrapper .main_wrapper nav .bottom_menu{
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width: 100%;
+    padding-top: 1rem;  
+}
+
+.wrapper .main_wrapper nav .bottom_menu a{
+    text-decoration: none;
+    color: #f7f8ff;
+    font-weight: 600;
+    padding: 0.5rem 0.8rem;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #095096;
+    margin-bottom: 100px;
+}
+
+.wrapper .main_wrapper nav .bottom_menu a:hover{
+    background-color: #ffffff54;
+}
+
+/* -- nav divider -- */
+.wrapper .main_wrapper nav .nav_divider{
+    width: 100%;
+    height: 3px;
+    background-color: #095096;
+    border-radius: 5px;
+}
+
+
+/* ------ MAIN CONTENT ------ */
+.wrapper .main_wrapper main{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    background-color: #F8F8FF;
+}
+
+/* header */
+.wrapper .main_wrapper main .header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 50px;
+    width: 100%;
+    background-color: #0575e6;
+}
+
+.wrapper .main_wrapper main .header button{
+    height: 80%;
+    width: 30px;
+    font-size: 1.2rem;  
+    background-color: transparent;
+    border: none;
+    border-radius: 0.8rem;
+    font-weight: bold;
+    color: #f7f8ff;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.wrapper .main_wrapper main .header button:hover{
+    background-color: #ffffff54;
+}
+
+/* contents */
+.wrapper .main_wrapper main .content{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    flex: 1;
+    width: 100%;
+}
+
+.wrapper .main_wrapper main .content .content_header{
+    padding: 0.7rem;    
+    background-color: #0575e6;
+}
+
+.wrapper .main_wrapper main .content .content_header label{
+    font-size: 1.5rem;
+    font-family: Poppins, sans-serif;
+    color: #f7f8ff;
+    font-weight: 600;
+}
+
+/* main contents */
+.wrapper .main_wrapper main .content .contents{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;  
+}

@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.wrapper .main_wrapper main .content .contents .maintenance_wrapper{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+/* tables*/
+
+.wrapper .main_wrapper main .content .contents .maintenance_wrapper .maintenance_table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.wrapper .main_wrapper main .content .contents .maintenance_wrapper .maintenance_table label{
+    padding: 0.3rem 1.3rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.wrapper .main_wrapper main .content .contents .maintenance_wrapper .maintenance_table .table_buttons{
+    margin-left: 1.3rem;
+    margin-right: auto;
+    padding: 1rem;
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f7f8ff;
+    background-color: #0575e6;
+    border: none;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wrapper .main_wrapper main .content .contents .maintenance_wrapper .maintenance_table .table_buttons:hover{
+    background-color: #095096;
+}
+
+.wrapper .main_wrapper main .content .contents .maintenance_wrapper .maintenance_table .table_container{
+    height: auto;
+    padding: 0.3rem 1rem;
+}
+
+.wrapper .main_wrapper main .content .contents .table_container .gridjs .gridjs-th {
+    background-color: #0575e6;
+    color: #f7f8ff;
+}
+
+.wrapper .main_wrapper main .content .contents .table_container .gridjs-tr:nth-child(even) {
+    background-color: #ececec;
+}
+
+.wrapper .main_wrapper main .content .contents .table_container .gridjs-tr:nth-child(odd) {
+    background-color: white;
+}
+
+.cell-button{
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.6rem;
+    color: #f7f8ff;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: Poppins, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delete-btn{
+    background-color: rgb(231, 42, 42);
+}
+.delete-btn:hover{
+    background-color: rgb(200, 30, 30);
+}
+
+.edit-btn{
+    background-color: #0575e6;
+}
+.edit-btn:hover{
+    background-color: #09549f;
+}
+
+.wrapper .main_wrapper main .content .contents .table_container .gridjs-search{
+    width: 30%;
+}
+
+.wrapper .main_wrapper main .content .contents .table_container .gridjs-search-input{
+    height: 30px;
+    width: 100%;
+}
+
+.wrapper .main_wrapper main .content .contents .table_container .gridjs-head{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.wrapper .main_wrapper main .content .contents .table_container .gridjs-head .selectTicketList{
+    height: 100%;
+    width: 50%;
+}
+
+
+/* modal */
+.wrapper .main_wrapper main .modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.wrapper .main_wrapper main .modal.active {
+    display: flex;
+}
+
+.wrapper .main_wrapper main .modal .modal_card{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #ffffff;
+    width: 350px;
+    height: auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* modal header */
+.wrapper .main_wrapper main .modal .modal_card .modal_header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.5rem 0.7rem;
+    background-color: #0575e6;
+}
+
+.wrapper .main_wrapper main .modal .modal_card .modal_header a{
+    font-size: 1.5rem;
+    color: #f7f8ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wrapper .main_wrapper main .modal .modal_card .modal_header a:hover{
+    color: #a8a9ae
+}
+
+/* modal contents */
+.wrapper .main_wrapper main .modal .modal_card .modal_title{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+}
+
+.wrapper .main_wrapper main .modal .modal_card .modal_title label{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.wrapper .main_wrapper main .modal .modal_card .modal_data input{
+    padding: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.wrapper .main_wrapper main .modal .modal_card .modal_id_wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.wrapper .main_wrapper main .modal .modal_card .modal_name_wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.wrapper .main_wrapper main .modal .modal_card .modal_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.5rem;
+}
+
+.wrapper .main_wrapper main .modal .modal_card .modal_button button{
+    width: 100%;
+    margin: 0.6rem 0;
+    padding: 0.9rem;
+    background-color: #0575e6;
+    border: none;
+    border-radius: 0.6rem;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #f7f8ff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.wrapper .main_wrapper main .modal .modal_card .modal_button button:hover{
+    background-color: #09549f;
+}
+

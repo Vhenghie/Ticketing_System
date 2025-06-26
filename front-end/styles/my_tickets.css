@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.wrapper .main_wrapper main .content .contents .table_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.wrapper .main_wrapper main .content .contents .table_container .gridjs .gridjs-th {
+    background-color: #0575e6;
+    color: #f7f8ff;
+}
+
+.wrapper .main_wrapper main .content .contents .table_container .gridjs-tr:nth-child(even) {
+    background-color: #af9696;
+}
+
+.wrapper .main_wrapper main .content .contents .table_container .gridjs-tr:nth-child(odd) {
+    background-color: white;
+}
+
+.wrapper .main_wrapper main .content .contents .table_container .gridjs-search{
+    width: 30%;
+}
+
+.wrapper .main_wrapper main .content .contents .table_container .gridjs-search-input{
+    height: 30px;
+    width: 100%;
+}
+
+.wrapper .main_wrapper main .content .contents .table_container .gridjs-head{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.wrapper .main_wrapper main .content .contents .table_container .gridjs-head .selectTicketList{
+    height: 100%;
+    width: 50%;
+}
+
+.view-btn{
+    background-color: #0575e6;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.6rem;
+    color: #f7f8ff;
+    font-weight: bold;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-btn:hover{
+    background-color: #095096;
+}
+
+
+.wrapper .main_wrapper main .content .contents .filter_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    gap: 1.5rem;
+}
+
+.wrapper .main_wrapper main .content .contents .filter_container .filter_rows {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.wrapper .main_wrapper main .content .contents .filter_container .filter_rows section{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #0575e6;
+    gap: 0.5rem;
+    color: #f7f8ff;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.wrapper .main_wrapper main .content .contents .filter_container .filter_rows section select,
+.wrapper .main_wrapper main .content .contents .filter_container .filter_rows section input{
+    height: 30px;
+    flex: 1;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.5rem;    
+    font-size: 1rem;
+    background-color: #f7f8ff;
+    color: #000000;
+}
+
+.wrapper .main_wrapper main .content .contents .filter_container .filter_rows button{
+    width: 100%;
+    height: 100%;
+    color: #f7f8ff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: Poppins, sans-serif;
+    background-color: #0575e6;
+    border: none;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.wrapper .main_wrapper main .content .contents .filter_container .filter_rows button:hover{
+    background-color: #095096;
+}
