@@ -68,10 +68,8 @@ const fnRegister = () => {
     }else{
         fetch(`${baseURL}Users`, {
             method: 'POST',
-            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
             },
             body: JSON.stringify({
                 name: document.getElementById('inputName').value,

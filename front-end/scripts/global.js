@@ -33,7 +33,6 @@ export const checkTokenValidity = async () => {
 
         const response = await fetch(`${baseURL}Authentication/verifyToken`, {
             method: 'GET',
-            mode: 'cors',
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json'

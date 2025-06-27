@@ -101,7 +101,6 @@ const handleResponse = async (response) => {
 const apiRequest = async (url, method, data) => {
     const config = {
         method,
-        mode: 'cors',
         headers: { 
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${localStorage.getItem('jwtToken')}` 
