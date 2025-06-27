@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function(e){
 const fnLogin = () => {
     fetch(`${baseURL}Authentication/login`, {
         method: 'POST',
+        mode: 'cors',
         credentials: 'omit',
         headers: {
             'Content-Type': 'application/json'
