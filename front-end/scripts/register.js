@@ -74,7 +74,7 @@ const fnRegister = () => {
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
-                name: document.getElementById('inputEmail').value,
+                name: document.getElementById('inputName').value,
                 email: document.getElementById('inputEmail').value,
                 password: document.getElementById('inputConfirmPassword').value
             })
