@@ -1,6 +1,6 @@
 import { adminMenu, checkTokenValidity, forceLogout, startTokenChecker } from '/scripts/global.js';
  
-const API_URL = 'https://ticketing-system.runasp.net/api/';
+const API_URL = 'https://my-ticketing-system.tryasp.net/api/';
 const MODAL = document.querySelector('.modal');
 const MODAL_ID = document.getElementById('modalIDInput');
 const MODAL_NAME = document.getElementById('modalNameInput');

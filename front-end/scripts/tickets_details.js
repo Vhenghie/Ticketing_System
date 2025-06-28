@@ -1,6 +1,6 @@
 import { adminMenu, checkTokenValidity, forceLogout, startTokenChecker } from '/scripts/global.js';
  
-const API_URL = 'https://ticketing-system.runasp.net/api/Ticket/';
+const API_URL = 'https://my-ticketing-system.tryasp.net/api/Ticket/';
 let ticketID = '';
 
 document.addEventListener('DOMContentLoaded', async() => {

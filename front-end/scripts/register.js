@@ -1,4 +1,4 @@
-const baseURL = 'https://ticketing-system.runasp.net/api/';
+const baseURL = 'https://my-ticketing-system.tryasp.net/api/';
 let isValidForm = false;
 
 document.addEventListener('DOMContentLoaded', function(e){
