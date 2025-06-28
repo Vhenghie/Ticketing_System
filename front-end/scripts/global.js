@@ -25,33 +25,72 @@ export const adminMenu = () => {
 }
 
 export const checkTokenValidity = async () => {
-    try {
-        const token = localStorage.getItem('jwtToken');
-        if (!token) {
-            return { isValid: false, message: 'No token found' };
-        }
+    const token = localStorage.getItem('jwtToken');
+    if (!token) return { isValid: false, code: "NO_TOKEN" };
 
-        const response = await fetch(`${baseURL}Authentication/verifyToken`, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            }
+    try {
+        const validationRes = await fetch(`${baseURL}Authentication/verifyToken`, {
+            headers: { 'Authorization': `Bearer ${token}` }
         });
 
-        if (!response.ok) {
-            const errorData = await response.json().catch(() => ({}));
-            return {
-                isValid: false,
-                message: errorData.message || 'Token verification failed'
-            };
+        if (validationRes.ok) {
+            return await validationRes.json();
         }
 
-        const data = await response.json();
-        return data;
+        const errorData = await validationRes.json();
+        if (errorData.code === "EXPIRED_TOKEN") {
+            return await attemptTokenRefresh(token);
+        }
 
+        return { isValid: false, ...errorData };
     } catch (err) {
-        console.error('Error verifying token:', err);
-        return { isValid: false, message: 'Network error during token verification' };
+        return { isValid: false, code: "NETWORK_ERROR" };
     }
-}
+};
+
+const attemptTokenRefresh = async (oldToken) => {
+    try {
+        const refreshRes = await fetch(`${baseURL}Authentication/refreshToken`, {
+            method: "POST",
+            headers: { 'Authorization': `Bearer ${oldToken}` }
+        });
+
+        if (refreshRes.ok) {
+            const { token: newToken } = await refreshRes.json();
+            localStorage.setItem('jwtToken', newToken);
+            return { isValid: true, token: newToken };
+        } else {
+            return { isValid: false, code: "REFRESH_FAILED" };
+        }
+    } catch (error) {
+        return { isValid: false, code: "REFRESH_NETWORK_ERROR" };
+    }
+};
+
+export const forceLogout = (message = "Session expired", showAlert = true) => {
+    localStorage.removeItem('jwtToken');
+
+    if (showAlert) {
+        Swal.fire({
+            title: 'Session Ended',
+            text: message,
+            icon: 'warning'
+        }).then(() => window.location.href = 'login.html');
+    } else {
+        window.location.href = 'login.html';
+    }
+};
+
+export const startTokenChecker = () => {
+    setInterval(async () => {
+        const { isValid, code } = await checkTokenValidity();
+        if (!isValid) {
+            forceLogout(
+                code === "REFRESH_FAILED" ? 
+                    "Session expired (could not renew)" : 
+                    "You've been logged out",
+                code !== "REFRESH_NETWORK_ERROR"
+            );
+        }
+    }, 300000);
+};

@@ -1,7 +1,4 @@
-
-import { checkTokenValidity } from '/scripts/global.js';
-import { removeToken } from '/scripts/global.js';
-import { adminMenu } from '/scripts/global.js';
+import { adminMenu, checkTokenValidity, forceLogout, startTokenChecker } from '/scripts/global.js';
  
 const API_URL = 'https://ticketing-system.runasp.net/api/';
 const MODAL = document.querySelector('.modal');
@@ -25,20 +22,10 @@ const gridInstances = {
 
 document.addEventListener('DOMContentLoaded', async () => {
     await adminMenu();
-    const tokenValidation = await checkTokenValidity();
-
-    if (tokenValidation.isValid === false) {
-        Swal.fire({
-            title: 'Session expired',
-            text: tokenValidation.message,
-            icon: 'warning',
-            confirmButtonText: 'Login Again',
-            confirmButtonColor: "#0575e6"
-        }).then(() => {
-            removeToken();
-            return;
-        });
-    }
+    const tokenCheck = await checkTokenValidity();
+    if (!tokenCheck.isValid) return forceLogout();
+    
+    startTokenChecker();
 
     document.querySelector('.logoutLink').addEventListener('click', logoutAcc);
     createTables();

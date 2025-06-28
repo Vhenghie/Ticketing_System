@@ -1,27 +1,14 @@
-
-import { checkTokenValidity } from '/scripts/global.js';
-import { removeToken } from '/scripts/global.js';
-import { adminMenu } from '/scripts/global.js';
+import { adminMenu, checkTokenValidity, forceLogout, startTokenChecker } from '/scripts/global.js';
  
 const API_URL = 'https://ticketing-system.runasp.net/api/Ticket/';
 let ticketID = '';
 
 document.addEventListener('DOMContentLoaded', async() => {
     await adminMenu();
-    const tokenValidation = await checkTokenValidity();
-
-    if (tokenValidation.isValid === false) {
-        Swal.fire({
-            title: 'Session expired',
-            text: tokenValidation.message,
-            icon: 'warning',
-            confirmButtonText: 'Login Again',
-            confirmButtonColor: "#0575e6"
-        }).then(() => {
-            removeToken();
-            return;
-        });
-    }
+    const tokenCheck = await checkTokenValidity();
+    if (!tokenCheck.isValid) return forceLogout();
+    
+    startTokenChecker();
 
     const urlParams = new URLSearchParams(window.location.search);
     ticketID= urlParams.get('id');
