@@ -28,6 +28,9 @@ const fnLogin = () => {
         localStorage.setItem('jwtToken', data.token);
         localStorage.setItem('userID', data.user_id);
         localStorage.setItem('userType', data.user_type);
+        console.log('Token:', data.token);
+        console.log('User ID:', data.user_id);
+        console.log('User Type:', data.user_type);
         window.location.href = 'my_tickets.html';
     })
     .catch(err => {
