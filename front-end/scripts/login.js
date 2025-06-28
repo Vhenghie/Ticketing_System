@@ -28,7 +28,7 @@ const fnLogin = () => {
         localStorage.setItem('jwtToken', data.token);
         localStorage.setItem('userID', data.user_id);
         localStorage.setItem('userType', data.user_type);
-        window.location.href = 'dashboard.html';
+        window.location.href = 'my_tickets.html';
     })
     .catch(err => {
         Toastify({
