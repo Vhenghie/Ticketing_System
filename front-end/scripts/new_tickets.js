@@ -68,7 +68,7 @@ const apiRequest = async (url, method, data) => {
 const populateSelectOptions = async (selectId, entity) => {
     try {
         const selectElement = document.getElementById(selectId);
-        const data = await apiRequest(`https://ticketing-system.runasp.net/api/${entity}`, 'GET', null);
+        const data = await apiRequest(`https://my-ticketing-system.tryasp.net/api/${entity}`, 'GET', null);
         
         if (!data || !Array.isArray(data)) {
             throw new Error(`Invalid data for ${entity}`);

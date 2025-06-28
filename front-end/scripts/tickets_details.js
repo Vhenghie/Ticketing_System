@@ -113,7 +113,7 @@ const apiRequest = async (url, method, data) => {
 const populateSelectOptions = async (selectId, entity) => {
     try{
         const selectElement = document.getElementById(selectId);
-        const data = await apiRequest(`https://ticketing-system.runasp.net/api/${entity}`, 'GET', null);
+        const data = await apiRequest(`https://my-ticketing-system.tryasp.net/api/${entity}`, 'GET', null);
         if (!data || data.length === 0) {
             selectElement.innerHTML = '<option value="">No options available</option>';
             return;
@@ -209,7 +209,7 @@ const deleteTicket = async (event) => {
 }
 
 const populateComments = async () => {
-    const data = await apiRequest(`https://ticketing-system.runasp.net/api/Comment/${ticketID}`, 'GET', null);
+    const data = await apiRequest(`https://my-ticketing-system.tryasp.net/api/Comment/${ticketID}`, 'GET', null);
 
     const comments_wrapper = document.querySelector('.comments_cards_wrapper');
     comments_wrapper.innerHTML = ''; 
@@ -256,7 +256,7 @@ const submitComment = async() => {
 
     try
     {
-        await apiRequest('https://ticketing-system.runasp.net/api/Comment', 'POST', commentObj);
+        await apiRequest('https://my-ticketing-system.tryasp.net/api/Comment', 'POST', commentObj);
         commentInput.value = '';
         Toastify({
                 text: "Comment added successfully",

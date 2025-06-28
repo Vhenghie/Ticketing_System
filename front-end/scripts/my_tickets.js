@@ -141,7 +141,7 @@ const populateSelectOptions = async (selectId, entity) => {
         defaultOption.textContent = 'All';
         selectElement.appendChild(defaultOption);
         
-        const data = await apiRequest(`https://ticketing-system.runasp.net/api/${entity}`, 'GET', null);
+        const data = await apiRequest(`https://my-ticketing-system.tryasp.net/api/${entity}`, 'GET', null);
         
         if (!data || !Array.isArray(data)) {
             throw new Error(`Invalid data for ${entity}`);
